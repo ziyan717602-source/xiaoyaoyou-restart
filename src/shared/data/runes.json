@@ -1,0 +1,90 @@
+[
+  {
+    "ID": 1,
+    "CODE": "SF01",
+    "NAME": "强袭",
+    "OCCURS": "R*ZD",
+    "PRIORS": "0",
+    "ONCES": 1,
+    "TERMINS": 0,
+    "CONSUME": 1,
+    "DESC": "战牌阶段，若您参战，您可消耗以令一方战力+2。"
+  },
+  {
+    "ID": 2,
+    "CODE": "SF02",
+    "NAME": "神行",
+    "OCCURS": "R*ZD",
+    "PRIORS": "0",
+    "ONCES": 1,
+    "TERMINS": 0,
+    "CONSUME": 1,
+    "DESC": "战牌阶段，若您参战，可消耗令命中+2。"
+  },
+  {
+    "ID": 3,
+    "CODE": "SF03",
+    "NAME": "法障",
+    "OCCURS": "G0OH",
+    "PRIORS": "-18",
+    "ONCES": 1,
+    "TERMINS": 1,
+    "CONSUME": 1,
+    "DESC": "您可消耗以抵消一次五灵属性伤害。"
+  },
+  {
+    "ID": 4,
+    "CODE": "SF04",
+    "NAME": "坚盾",
+    "OCCURS": "G0OH",
+    "PRIORS": "-150",
+    "ONCES": 1,
+    "TERMINS": 1,
+    "CONSUME": 1,
+    "DESC": "您受到标准伤害时可消耗补1张牌；若为无属性伤害，则可改为抵消此伤害。生效后您HP+1。"
+  },
+  {
+    "ID": 5,
+    "CODE": "SF05",
+    "NAME": "脱力",
+    "OCCURS": "!R*Z8",
+    "PRIORS": "0",
+    "ONCES": 1,
+    "TERMINS": 0,
+    "CONSUME": 1,
+    "DESC": "！若您参战，战斗开始阶段消耗令您的战力-2。"
+  },
+  {
+    "ID": 6,
+    "CODE": "SF06",
+    "NAME": "虚弱",
+    "OCCURS": "!G1TH",
+    "PRIORS": "250",
+    "ONCES": 1,
+    "TERMINS": 0,
+    "CONSUME": 1,
+    "DESC": "！您承受伤害后强制消耗，您对自己造成1点伤害。"
+  },
+  {
+    "ID": 7,
+    "CODE": "SF07",
+    "NAME": "神算",
+    "OCCURS": "G0TT",
+    "PRIORS": "130",
+    "ONCES": 1,
+    "TERMINS": 1,
+    "CONSUME": 1,
+    "DESC": "任意角色掷骰结果生效前，您可消耗以令数值至多向上或向下调整2点。"
+  },
+  {
+    "ID": 8,
+    "CODE": "SF08",
+    "NAME": "狂暴",
+    "OCCURS": "!R*Z1",
+    "PRIORS": "0",
+    "ONCES": 1,
+    "TERMINS": 1,
+    "CONSUME": 0,
+    "DESC": "！您不能使用任意手牌，不可放弃战斗。战斗开始阶段，您战力加倍，命中变为0。当您回复HP时，弃置本标记。"
+  }
+]
