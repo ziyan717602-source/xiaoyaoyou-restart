@@ -1,0 +1,51 @@
+/**
+ * 回合开始阶段
+ *
+ * 流程：
+ * 1. 重置所有玩家 RAM
+ * 2. 横置检查：若玩家被横置，跳过所有阶段进入弃牌阶段
+ * 3. 触发回合开始技能
+ * 4. 进入事件阶段
+ */
+
+import type { PhaseConfig } from 'boardgame.io';
+import type { GameState } from '../../shared/types/game';
+import { PhaseType } from '../../shared/types/enums';
+
+export const turnStartPhase: PhaseConfig<GameState> = {
+  start: true,
+  next: 'event',
+  onBegin: ({ G, ctx }) => {
+    const playerId = ctx.currentPlayer;
+    const player = G.players[playerId];
+    if (!player) return;
+
+    // 1. 重置所有玩家的 RAM
+    for (const pid of Object.keys(G.players)) {
+      const p = G.players[pid];
+      if (p) p.ram = {};
+    }
+
+    // 2. 重置当前玩家的 RFM
+    player.rfm = {};
+
+    // 3. 更新当前阶段
+    G.currentPhase = PhaseType.TURN_START;
+    G.currentPlayerId = playerId;
+
+    // 4. 横置检查：若被横置，跳过所有阶段（除弃牌外）
+    if (player.immobilized) {
+      player.skippedCombat = true;
+      // 横置角色跳过事件→技牌→战斗→补牌，直接进入弃牌阶段
+      // 设置标记让 endIf 检测并自动跳转
+    }
+  },
+  endIf: ({ G, ctx }) => {
+    const playerId = ctx.currentPlayer;
+    const player = G.players[playerId];
+    if (!player) return true;
+    // 横置角色跳过此阶段
+    return player.immobilized;
+  },
+  moves: {},
+};
