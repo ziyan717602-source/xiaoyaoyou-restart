@@ -1,0 +1,12 @@
+# 忽略 reference/psd48-master 文件夹
+reference/psd48-master/
+
+# 常见的忽略文件
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
